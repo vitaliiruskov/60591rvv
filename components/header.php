@@ -16,8 +16,13 @@
           <li><a href="catalog.php">Каталог</a></li>
             <?php
             if ($_SESSION['username']) {
-                echo ('<li><a href="product_add.php">Добавить продукт</a></li>');
+
+                if ($_SESSION['admin']) {
+                    echo ('<li><a href="product_add.php">Добавить продукт</a></li>');;
+                }
+
                 echo ('<li><a href="login.php?logout=1">'.$_SESSION['username'].' (Выйти) </a></li>');
+                echo ('<li><a href="order.php">Заказ</a></li>');
 
             }
             else {
